@@ -1,1 +1,2 @@
-Hello World
+To run program
+=> npm start
