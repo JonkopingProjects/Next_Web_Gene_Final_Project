@@ -15,10 +15,9 @@ app.get('', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
-app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/views/about.html')
+app.get('/query', (req, res) => {
+    res.sendFile(__dirname + '/views/query.html')
 })
-
 
 app.get('/profiles', (req, res) => {
     res.sendFile(__dirname + '/views/profiles.html')
@@ -36,4 +35,3 @@ app.get('/profile3', (req, res) => {
 
 
 app.listen(port, () => console.info(`App listening on port ${port}`))
-
