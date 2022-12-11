@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    var tempo = 0;
+    function goToQueryPage() {
+        location.href = "/query";
+    }
+
+    function goToProfilePage() {
+        location.href = "/profile";
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NextWebGeneration</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    
-    index page
-    <h1>Salut</h1>
-
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/profiles">Profiles</a>
+        <a href="/query">Query</a>
+        <a class="profile_icon" href="/profiles"><img class="icon_img" src="img/profile-user.png"></a>
+    </div>
+    <div class="title_container">
+        <h1 class="title">CouHaieRiz</h1>
+        <div class="content_container">
+            <h2>Welcome to CouHaieRiz, here you can simply make some queries about general culture and music !</h2>
+        </div>
+    </div>
+    <div class="button_container">
+        <button id="profile_button" class="button" onclick="goToProfilePage()">Choose a profile</button>
+        <button class="button" onclick="goToQueryPage()">Make a query</button>
+    </div>
+    <script>
+        var profile = document.getElementById("profile");
+        
+        if (profile.src != "http://localhost:3000/img/profile-user.png") {
+            document.getElementById("profile_button").style.display = "none";
+        }
+    </script>
 </body>
 </html>

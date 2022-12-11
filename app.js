@@ -15,9 +15,8 @@ app.get('', (req, res) => {
     res.sendFile(__dirname + '/views/index.html')
 })
 
-app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/views/about.html')
+app.get('/query', (req, res) => {
+    res.sendFile(__dirname + '/views/query.html')
 })
 
 app.listen(port, () => console.info(`App listening on port ${port}`))
-

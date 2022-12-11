@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function goToProfilePage() {
+        location.href = "/profile";
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextWebGeneration</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/profiles">Profiles</a>
+        <a class="active" href="/query">Query</a>
+        <a class="profile_icon" href="/profiles"><img id="profile" class="icon_img" src="img/profile-user.png"></a>
+    </div>
+    <div id="element_with_profile">
+        <div class="content_container">
+            <h2>What type of query do you want to execute ?</h2>
+        </div>
+        <div class="button_container">
+            <button class="button">Music query</button>
+            <button class="button">General Culture query</button>
+        </div>
+    </div>
+    <div id="element_without_profile">
+        <div class="content_container">
+            <h2>You first have to pick a profile to execute a query</h2>
+        </div>
+        <div class="button_container">
+            <button class="button" onclick="goToProfilePage()">Choose a profile</button>
+        </div>
+    </div>
+    <script>
+        var profile = document.getElementById("profile");
+        
+        if (profile.src == "http://localhost:3000/img/profile-user.png") {
+            document.getElementById("element_with_profile").style.display = "none";
+        }
+    </script>
+</body>
+</html> 
