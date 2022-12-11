@@ -42,6 +42,10 @@ body {
     margin-top: 15%;
 }
 
+.pick_up_profile {
+    margin-top: 5%;
+}
+
 .button {
     width: 200px;
     background-color: #04AA6D;
@@ -68,5 +72,26 @@ body {
 
 .content_container {
     margin-top: 5%;
+    text-align: center;
+}
+
+.profiles_container {
+    flex-direction: row;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+.profile_card {
+    flex-direction: row;
+}
+
+.profile {
+    margin-top: 10%;
+    margin-left: 44%;
+}
+
+.profile_content {
+    margin-top: 1%;
+    margin-right: 80%;
     text-align: center;
 }

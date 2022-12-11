@@ -2,7 +2,7 @@
 <html lang="en">
 <script>
     function goToProfilePage() {
-        location.href = "/profile";
+        location.href = "/profiles";
     }
 </script>
 <head>
@@ -27,20 +27,14 @@
             <button class="button">General Culture query</button>
         </div>
     </div>
-    <div id="element_without_profile">
+    <!-- <div id="element_without_profile">
         <div class="content_container">
             <h2>You first have to pick a profile to execute a query</h2>
         </div>
         <div class="button_container">
+            <script type="module" src="js/module1.js"></script>
             <button class="button" onclick="goToProfilePage()">Choose a profile</button>
         </div>
-    </div>
-    <script>
-        var profile = document.getElementById("profile");
-        
-        if (profile.src == "http://localhost:3000/img/profile-user.png") {
-            document.getElementById("element_with_profile").style.display = "none";
-        }
-    </script>
+    </div> -->
 </body>
 </html> 

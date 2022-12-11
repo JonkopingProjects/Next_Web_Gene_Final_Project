@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NextWebGeneration</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-
-
+<script>
+    function backHome() {
+        location.href = "/"
+    }
+</script>
 <body>
-    
-    <div class="card">
-        <h1>John Doe</h1>
-        <p class="title">Music type:</p>
-        <a>Rap</a>
-        <p>Hobbies:</p>
-        <a>Archeology</a>
-        <p><button>Contact</button></p>
-      </div>
-
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a class="active" href="/profiles">Profiles</a>
+        <a href="/query">Query</a>
+        <a class="profile_icon" href="/profiles"><img id="profile" class="icon_img" src="img/profile-user.png"></a>
+    </div>
+    <div class="profile">
+        <img id="profile1" src="img/profile_card_jhon.png">
+        <h2 class="profile_content">John Doe</h2>
+        <h2 class="profile_content">Music type: Rap</h2>
+        <h2 class="profile_content">Hobbies: Archeology</h2>
+    </div>
+    <div class="pick_up_profile">
+        <button class="button" onclick="backHome()">Pick up</button>
+    </div>
 </body>
-
 </html>
