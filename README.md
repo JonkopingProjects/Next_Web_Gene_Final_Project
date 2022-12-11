@@ -1,1 +1,3 @@
-Run : npm start
+To run program
+=> npm start
+
