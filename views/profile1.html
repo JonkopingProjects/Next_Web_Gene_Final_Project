@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    var status = "<%= status %>";
+
+    var icon = "";
+    if (status == 1)
+        icon = "/img/profile_card_jhon.png";
+    else if (status == 2)
+        icon = "/img/profile_card_woman.png";
+    else if (status == 3)
+        icon = "/img/profile_card_teenager.png";
+    else
+        icon = "/img/profile-user.png";
+    function backHome() {
+        location.href = "/1"
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextWebGeneration</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 </head>
-<script>
-    function backHome() {
-        location.href = "/"
-    }
-</script>
 <body>
     <div class="topnav">
-        <a href="/">Home</a>
-        <a class="active" href="/profiles">Profiles</a>
-        <a href="/query">Query</a>
-        <a class="profile_icon" href="/profiles"><img id="profile" class="icon_img" src="img/profile-user.png"></a>
+        <script>
+            document.write('<a href="/1">Home</a>');
+            document.write('<a class="active" href="/1/profiles">Profiles</a>');
+            document.write('<a href="/1/query">Query</a>');
+            document.write('<a class="profile_icon" href="/1/profiles"><img class="icon_img" src="' + icon + '"></a>')
+        </script>
     </div>
     <div class="profile">
-        <img id="profile1" src="img/profile_card_jhon.png">
+        <img id="profile1" src="/img/profile_card_jhon.png">
         <h2 class="profile_content">John Doe</h2>
         <h2 class="profile_content">Music type: Rap</h2>
         <h2 class="profile_content">Hobbies: Archeology</h2>

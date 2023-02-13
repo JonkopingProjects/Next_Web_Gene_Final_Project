@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
+    var status = "<%= status %>";
+
+    var icon = "";
+    if (status == 1)
+        icon = "/img/profile_card_jhon.png";
+    else if (status == 2)
+        icon = "/img/profile_card_woman.png";
+    else if (status == 3)
+        icon = "/img/profile_card_teenager.png";
+    else
+        icon = "/img/profile-user.png";
+    
+        // console.log(status)
     function goToProfilePage() {
-        location.href = "/profiles";
+        location.href = "/0/profiles";
     }
 </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextWebGeneration</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 </head>
 <body>
     <div class="topnav">
-        <a href="/">Home</a>
-        <a href="/profiles">Profiles</a>
-        <a class="active" href="/query">Query</a>
-        <a class="profile_icon" href="/profiles"><img id="profile" class="icon_img" src="img/profile-user.png"></a>
+        <script>
+            var home = "/" + status;
+            document.write('<a href="' + home + '">Home</a>');
+            var profiles = "/" + status + "/profiles";
+            document.write('<a href="' + profiles + '">Profiles</a>');
+            var query = "/" + status + "/query"
+            document.write('<a class="active" href="' + query + '">Query</a>');
+            document.write('<a class="profile_icon" href="' + profiles + '"><img class="icon_img" src="' + icon + '"></a>')
+        </script>
     </div>
     <div id="element_with_profile">
         <div class="content_container">
@@ -27,14 +45,19 @@
             <button class="button">General Culture query</button>
         </div>
     </div>
-    <!-- <div id="element_without_profile">
+    <div id="element_without_profile" hidden>
         <div class="content_container">
             <h2>You first have to pick a profile to execute a query</h2>
         </div>
         <div class="button_container">
-            <script type="module" src="js/module1.js"></script>
             <button class="button" onclick="goToProfilePage()">Choose a profile</button>
         </div>
-    </div> -->
+        <script>
+            if (status == 0) {
+                document.getElementById("element_with_profile").style.display = "none"
+                document.getElementById("element_without_profile").style.display = "block"
+            }
+        </script>
+    </div>
 </body>
 </html> 

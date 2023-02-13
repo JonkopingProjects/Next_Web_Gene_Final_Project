@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-    function goToQueryPage() {
-        location.href = "/query";
+    var status = "<%= status %>";
+    // console.log(status)
+    var icon = "";
+    if (status == 1)
+        icon = "/img/profile_card_jhon.png";
+    else if (status == 2)
+        icon = "/img/profile_card_woman.png";
+    else if (status == 3)
+        icon = "/img/profile_card_teenager.png";
+    else
+        icon = "/img/profile-user.png";
+    function goToProfilePage() {
+        location.href = status + "/profiles";     
     }
 
-    function goToProfilePage() {
-        location.href = "/profiles";
+    function goToQueryPage() {
+        location.href = status + "/query";     
     }
 </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextWebGeneration</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 </head>
-
-
 <body>
     <div class="topnav">
-        <a class="active" href="/">Home</a>
-        <a href="/profiles">Profiles</a>
-        <a href="/query">Query</a>
-        <a class="profile_icon" href="/profiles"><img class="icon_img" src="img/profile-user.png"></a>
+        <script>
+            var home = "/" + status;
+            document.write('<a class="active" href="' + home + '">Home</a>');
+            var profiles = "/" + status + "/profiles";
+            document.write('<a href="' + profiles + '">Profiles</a>');
+            var query = "/" + status + "/query"
+            document.write('<a href="' + query + '">Query</a>');
+            document.write('<a class="profile_icon" href="' + profiles + '"><img class="icon_img" src="' + icon + '"></a>');
+        </script>
     </div>
     <div class="title_container">
         <h1 class="title">CouHaieRiz</h1>
@@ -30,17 +44,15 @@
             <h2>Welcome to CouHaieRiz, here you can simply make some queries about general culture and music !</h2>
         </div>
     </div>
-    <div class="button_container">
+    <div class="button_container"> 
         <button id="profile_button" class="button" onclick="goToProfilePage()">Choose a profile</button>
-        <button class="button" onclick="goToQueryPage()">Make a query</button>
+        <button id="query_button" class="button" onclick="goToQueryPage()">Make a query</button>
+        <script>
+            if (status != 0) {
+                document.getElementById("profile_button").style.display = "none"
+            }
+        </script>
     </div>
-    <script>
-        var profile = document.getElementById("profile");
-        
-        if (profile.src != "http://localhost:3000/img/profile-user.png") {
-            document.getElementById("profile_button").style.display = "none";
-        }
-    </script>
 </body>
 
 

@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    var status = "<%= status %>";
+    
+    var icon = "";
+    if (status == 1)
+        icon = "/img/profile_card_jhon.png";
+    else if (status == 2)
+        icon = "/img/profile_card_woman.png";
+    else if (status == 3)
+        icon = "/img/profile_card_teenager.png";
+    else
+        icon = "/img/profile-user.png";
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextWebGeneration</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 </head>
 <body>
     <div class="topnav">
-        <a href="/">Home</a>
-        <a class="active" href="/profiles">Profiles</a>
-        <a href="/query">Query</a>
-        <a class="profile_icon" href="/profiles"><img id="profile" class="icon_img" src="img/profile-user.png"></a>
+        <script>
+            var home = "/" + status;
+            document.write('<a href="' + home + '">Home</a>');
+            var profiles = "/" + status + "/profiles";
+            document.write('<a class="active" href="' + profiles + '">Profiles</a>');
+            var query = "/" + status + "/query"
+            document.write('<a href="' + query + '">Query</a>');
+            document.write('<a class="profile_icon" href="' + profiles + '"><img class="icon_img" src="' + icon + '"></a>')
+        </script>
     </div>
     <div class="content_container">
         <h2>Pick up a profile !</h2>
     </div>
     <div class="profiles_container">
-        <a href="/profile1"><img id="profile1" src="img/profile_card_jhon.png"></a>
-        <a href="/profile2"><img id="profile2" src="img/profile_card_woman.png"></a>
-        <a href="/profile3"><img id="profile3" src="img/profile_card_teenager.png"></a>
+        <script>
+            var profile1 = "/" + status + "/profile1"
+            document.write('<a href="' + profile1 + '"><img id="profile1" src="/img/profile_card_jhon.png"></a>');
+            var profile2 = "/" + status + "/profile2"
+            document.write('<a href="' + profile2 + '"><img id="profile2" src="/img/profile_card_woman.png"></a>');
+            var profile3 = "/" + status + "/profile3"
+            document.write('<a href="' + profile3 + '"><img id="profile3" src="/img/profile_card_teenager.png"></a>');
+        </script>
     </div>
 </body>
 </html>
