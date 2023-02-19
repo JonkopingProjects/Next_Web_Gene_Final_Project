@@ -6,7 +6,7 @@ app.engine('html', require('ejs').renderFile);
 console.log(__dirname);
 app.use(express.static('public'))
 // app.use('/css', express.static('public/css'))
-// app.use('/js', express.static(__dirname + 'public/js'))
+app.use('/js', express.static(__dirname + 'public/js'))
 app.use('/img', express.static(__dirname + 'public/images'))
 
 app.get('/', (req, res) => {
@@ -26,12 +26,6 @@ app.get('/:status/query', (req, res) => {
     const status = req.params.status;
     res.render(__dirname + '/views/query.html', {status})
 })
-
-// app.get('/:status/query/:type', (req, res) => {
-//     const status = req.params.status;
-//     const type = req.params.type;
-//     res.render(__dirname + '/views/query.html', {status, type})
-// })
 
 app.get('/0/profiles', (req, res) => {
     res.render(__dirname + '/views/profiles.html', {status: 0})
