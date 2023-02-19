@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
+
     var status = "<%= status %>";
 
     var icon = "";
@@ -16,6 +17,36 @@
         // console.log(status)
     function goToProfilePage() {
         location.href = "/0/profiles";
+    }
+
+    function executeCultureQuery() {
+        document.getElementById("element_with_profile").style.display = "none"
+        if (status == 1) {
+            document.getElementById("element_profile_1_culture").style.display = "block"
+        }
+        else if (status == 2) {
+            document.getElementById("element_profile_2_culture").style.display = "block"
+        }
+        else {
+            document.getElementById("element_profile_3_culture").style.display = "block"
+        }
+    }
+
+    function executeMusicQuery() {
+        document.getElementById("element_with_profile").style.display = "none"
+        if (status == 1) {
+            document.getElementById("element_profile_1_music").style.display = "block"
+        }
+        else if (status == 2) {
+            document.getElementById("element_profile_2_music").style.display = "block"
+        }
+        else {
+            document.getElementById("element_profile_3_music").style.display = "block"
+        }
+    }
+
+    function back() {
+        location.href = "/" + status + "/query"
     }
 </script>
 <head>
@@ -41,8 +72,8 @@
             <h2>What type of query do you want to execute ?</h2>
         </div>
         <div class="button_container">
-            <button class="button">Music query</button>
-            <button class="button">General Culture query</button>
+            <button id="music_query_button" class="button" onclick="executeMusicQuery()">Music query</button>
+            <button id="culture_query_button" class="button" onclick="executeCultureQuery()">General Culture query</button>
         </div>
     </div>
     <div id="element_without_profile" hidden>
@@ -58,6 +89,66 @@
                 document.getElementById("element_without_profile").style.display = "block"
             }
         </script>
+    </div>
+    <div id="element_profile_1_music" hidden>
+        <div class="content_container">
+            <h2>1) CAPO PLAZA - Billets feat. Ninho </h2>
+            <h2>2) Migos - Walk It Talk It feat. Drake </h2>
+            <h2>3) Bekar - Magenta </h2>
+        </div>
+        <div class="button_container">
+            <button class="button" onclick="back()">Back</button>
+        </div>
+    </div>
+    <div id="element_profile_1_culture" hidden>
+        <div class="content_container">
+            <h2>1) The Archaeology Book (2009) - David Down</h2>
+            <h2>2) Prehistoric Britain (1987) - Timothy Darvill</h2>
+            <h2>3) The Oxford HandBook of Maritime Archaeology (2011) - Oxford University</h2>
+        </div>
+        <div class="button_container">
+            <button class="button" onclick="back()">Back</button>
+        </div>
+    </div>
+    <div id="element_profile_2_music" hidden>
+        <div class="content_container">
+            <h2>1) Taylor Swift - Anti-Hero</h2>
+            <h2>2) Ariana Grande - 7 rings</h2>
+            <h2>3) Ed Sheeran - Bad Habits</h2>
+        </div>
+        <div class="button_container">
+            <button class="button" onclick="back()">Back</button>
+        </div>
+    </div>
+    <div id="element_profile_2_culture" hidden>
+        <div class="content_container">
+            <h2>1) The Elder Scrolls - Skyrim (2011)</h2>
+            <h2>2) Cyberpunk 2077 (2020)</h2>
+            <h2>3) Mario Kart 8 (2014)</h2>
+        </div>
+        <div class="button_container">
+            <button class="button" onclick="back()">Back</button>
+        </div>
+    </div>
+    <div id="element_profile_3_music" hidden>
+        <div class="content_container">
+            <h2>1) Mozart - Lacrimosa</h2>
+            <h2>2) Beethoven - Symphony No. 5</h2>
+            <h2>3) Vivaldi - La Follia</h2>
+        </div>
+        <div class="button_container">
+            <button class="button" onclick="back()">Back</button>
+        </div>
+    </div>
+    <div id="element_profile_3_culture" hidden>
+        <div class="content_container">
+            <h2>1) Calculus Made Easy (1910) - Silvanus P. Thompson</h2>
+            <h2>2) La Théorie du chaos (1987) - James Gleick</h2>
+            <h2>3) A History of Pi (1970) - Petr Beckmann</h2>
+        </div>
+        <div class="button_container">
+            <button class="button" onclick="back()">Back</button>
+        </div>
     </div>
 </body>
 </html> 
