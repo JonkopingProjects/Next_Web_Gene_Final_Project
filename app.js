@@ -39,16 +39,46 @@ app.get('/:status/profiles', (req, res) => {
 app.get('/:status/profile1', (req, res) => {
     const status = req.params.status;
     res.render(__dirname + '/views/profile1.html', {status})
+    const fs = require('fs');
+const path = require('path');
+
+const data = 'John Doe Music type: Rap Hobbies: Archaeology'; // Remplacez cela avec les données RDF que vous souhaitez écrire dans le fichier
+const filename = 'profile1.rdf'; // Nom de fichier que vous souhaitez utiliser pour le fichier RDF
+
+fs.writeFile(path.join(__dirname, filename), data, (err) => {
+  if (err) throw err;
+  console.log('File saved!');
+});
 })
 
 app.get('/:status/profile2', (req, res) => {
     const status = req.params.status;
     res.render(__dirname + '/views/profile2.html', {status})
+    const fs = require('fs');
+const path = require('path');
+
+const data = 'Sarah Fisher Music type: Pop Hobbies: Video Games'; // Remplacez cela avec les données RDF que vous souhaitez écrire dans le fichier
+const filename = 'profile2.rdf'; // Nom de fichier que vous souhaitez utiliser pour le fichier RDF
+
+fs.writeFile(path.join(__dirname, filename), data, (err) => {
+  if (err) throw err;
+  console.log('File saved!');
+});
 })
 
 app.get('/:status/profile3', (req, res) => {
     const status = req.params.status;
-    res.render(__dirname + '/views/profile3.html', {status})
+    res.render(__dirname + '/views/profile3.html', {status});
+    const fs = require('fs');
+const path = require('path');
+
+const data = 'André Markov Music type: Classic Hobbies: Maths'; // Remplacez cela avec les données RDF que vous souhaitez écrire dans le fichier
+const filename = 'profile3.rdf'; // Nom de fichier que vous souhaitez utiliser pour le fichier RDF
+
+fs.writeFile(path.join(__dirname, filename), data, (err) => {
+  if (err) throw err;
+  console.log('File saved!');
+});
 })
 
 app.listen(port, () => console.info(`App listening on port ${port}`))
